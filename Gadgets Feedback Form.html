@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgets Feedback Form</title>
+    <Center><h1>Gadgets Feedback Form</h1></Center>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #000000;
+        }
+
+        #responseMessage {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="feedbackForm" onsubmit="showResponseMessage(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="performanceRating">Performance Rating:</label>
+        <select id="performanceRating" name="performanceRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="designRating">Design Rating:</label>
+        <select id="designRating" name="designRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="featureRating">Feature Rating:</label>
+        <select id="featureRating" name="featureRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="overallSatisfaction">Overall Satisfaction:</label>
+        <select id="overallSatisfaction" name="overallSatisfaction" required>
+            <option value="1">Not Satisfied</option>
+            <option value="2">Slightly Satisfied</option>
+            <option value="3">Moderately Satisfied</option>
+            <option value="4">Very Satisfied</option>
+            <option value="5">Extremely Satisfied</option>
+        </select>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="responseMessage"></div>
+
+    <script>
+        function showResponseMessage() {
+           
+            var responseMessage = "Thanks for your response " + name + "!<br>";
+
+            document.getElementById('responseMessage').innerHTML = responseMessage;
+        }
+    </script>
+
+</body>
+</html>
